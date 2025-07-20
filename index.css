@@ -5,9 +5,16 @@
   font-family: "inter", sans-serif;
 }
 
+html{
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
 body {
   position: relative;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .btn {
@@ -22,6 +29,8 @@ body {
 .btn:hover {
   opacity: 0.5;
 }
+
+
 /* headerr section */
 
 header {
@@ -97,6 +106,7 @@ nav ul a:hover {
 /* tablet */
 
 @media screen and (max-width: 830px) {
+
   header {
     padding: 10px 30px;
     overflow: hidden;
@@ -113,6 +123,7 @@ nav ul a:hover {
     font-weight: bold;
     z-index: 10;
     cursor: pointer;
+    /* position: fixed; */
   }
 
   nav ul {
@@ -138,6 +149,12 @@ nav ul a:hover {
     opacity: 1;
     pointer-events: auto;
   }
+
+  .no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 
   .Login_btn {
     width: 100%;
@@ -248,18 +265,26 @@ nav ul a:hover {
   }
 }
 
+
+
 /*  discover section */
 
 .discover_section {
   background-color: black;
   padding: 40px 120px;
+
 }
 
+.discover{
+  max-width: 850px;
+  margin: 0 auto;
+
+}
 .discover h2 {
   color: white;
   font-size: 2.2rem;
   font-weight: 400;
-  width: 650px;
+  width: 80%;
   text-align: center;
   margin-inline: auto;
   margin-bottom: 30px;
@@ -267,6 +292,14 @@ nav ul a:hover {
 
 .video_png {
   text-align: center;
+  width: 100%;
+}
+
+.video_png img{
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+
 }
 
 .discover button {
@@ -278,6 +311,24 @@ nav ul a:hover {
   opacity: 0.8;
   background-color: #4991ff;
 }
+
+
+
+/* tablet */
+@media (max-width: 900px){
+  .discover_section {
+  padding: 40px 10px;
+}
+
+.discover h2 {
+  font-size: 2rem; 
+}
+
+.discover button {
+ font-size: 1rem;
+}
+}
+
 
 /* testimonials sectioin */
 
@@ -322,6 +373,40 @@ nav ul a:hover {
 .card > p + h3 + p {
   margin-bottom: 10px;
 }
+
+ /* tablets */
+@media (max-width: 900px){
+  .testimonials_section {
+  padding: 40px 10px; 
+}
+
+.testimonials_section h2 {
+  font-size: 2rem;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+
+}
+}
+
+/* phones */
+
+@media (max-width:759px){
+.grid {
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+}
+
+@media (max-width:546px){
+.grid {
+  grid-template-columns: repeat(1, 1fr);
+  
+}
+}
+
 
 /* pricing section */
 
@@ -430,6 +515,33 @@ nav ul a:hover {
   text-align: center;
 }
 
+
+/* tablets */
+
+@media (max-width: 990px){
+  .pricing_section {
+  padding: 40px 10px;
+}
+.pricing {
+  padding:0 20px;
+}
+}
+
+@media (max-width: 700px){
+.card_container {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.pricing_text {
+  color: rgb(71, 69, 69);
+  font-size: 1rem;
+}
+.pricing {
+  padding:0 10px;
+}
+}
+
+
 /* faq section */
 
 .faq_section {
@@ -503,7 +615,6 @@ nav ul a:hover {
 
 .hide {
   display: none;
-  /* opacity: 0; */
 }
 
 .show {
@@ -511,16 +622,84 @@ nav ul a:hover {
 }
 
 .answer {
-  max-height: 0;
   transition: max-heighy 0.3s ease;
   overflow: hidden;
   opacity: 0;
 }
 
 .answer.show {
-  max-height: 50px;
   opacity: 1;
 }
+
+ /* media queries */
+@media (max-width: 990px){
+.faq_section {
+  padding: 40px 10px;
+  background-color: #f4f4f6;
+}
+
+.faqs {
+  padding: 20px 10px;
+}
+
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(71, 69, 69);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+
+.question {
+ flex-shrink: 2;
+}
+
+.toggle_btn{
+ flex-shrink: 0;
+}
+}
+
+/* phones */
+
+@media (max-width:600px){
+  .faqs h2{
+    font-size: 1.8rem;
+  }
+
+  .question {
+  font-size: 0.9rem;
+  font-weight: 600;
+ 
+}
+
+.faq > p {
+  font-size: 0.9rem;
+}
+
+.faq_nav {
+  padding: 10px 10px;
+}
+
+.all {
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.getting {
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+}
+
+
 
 /* footer section */
 
@@ -552,4 +731,28 @@ footer img {
   text-align: center;
   font-size: 1rem;
   font-weight: 400;
+}
+
+
+/* phones */
+
+@media (max-width:669px){
+  footer {
+  padding: 40px 10px;
+ 
+}
+
+.f_logo_cont {
+  width: 140px;
+  height: 40px;
+  margin-bottom: 22px;
+}
+
+.footer_top p {
+  font-size: 0.9rem;
+}
+
+.copyright {
+  font-size: 0.7rem;
+}
 }
